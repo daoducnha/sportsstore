@@ -61,8 +61,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment <br />
+
+refer: https://github.com/mars/create-react-app-buildpack <br />
+step 1: heroku create $APP_NAME --buildpack mars/create-react-app <br />
+step 2: git remote remove heroku <br />
+step 3: git remote add heroku https://git.heroku.com/todoappnhadd.git <br />
+step 4: git push heroku  master <br />
+Link heroku: https://sportsstorenhadd.herokuapp.com/shop/products/all/1 <br />
 
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+

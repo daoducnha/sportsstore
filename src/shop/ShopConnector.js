@@ -1,4 +1,4 @@
-import { loadData } from "../data/ActionCreators";
+import { loadData, placeOrder } from "../data/ActionCreators";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -12,6 +12,8 @@ import {
 } from "../data/CartActionCreators";
 import { CartDetails } from "./CartDetails";
 import { DataGetter } from "../data/DataGetter";
+import { Checkout } from "./Chekout";
+import { Thanks } from "./Thanks";
 
 const mapStateToProps = (dataStore) => ({
   ...dataStore,
@@ -23,6 +25,7 @@ const mapDispatchToProps = {
   updateCartQuantity,
   removeFromCart,
   clearCart,
+  placeOrder,
 };
 
 export const ShopConnecter = connect(
@@ -51,6 +54,16 @@ export const ShopConnecter = connect(
             render={(routeProps) => (
               <CartDetails {...this.props} {...routeProps} />
             )}
+          />
+          <Route
+            path="/shop/checkout"
+            render={(routeProps) => (
+              <Checkout {...this.props} {...routeProps} />
+            )}
+          />
+          <Route
+            path="/shop/thanks"
+            render={(routeProps) => <Thanks {...this.props} {...routeProps} />}
           />
           <Redirect to="/shop/products/all/1" />
         </Switch>
