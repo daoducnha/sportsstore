@@ -11,7 +11,7 @@ export class App extends Component {
   render() {
     return (
       <Provider store={SportsStoreDataStore}>
-        <Router>
+==        <Router>
           <Switch>
             <Route path="/shop" component={ShopConnecter} />
             <Redirect to='/shop' />          
